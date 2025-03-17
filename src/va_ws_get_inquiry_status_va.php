@@ -27,7 +27,7 @@ try {
   $partnerId = ''; //partner id
   $channelId = ''; // channel id
 
-  $partnerServiceId = 'akllsklas'; // partner service id
+  $partnerServiceId = ''; // partner service id
   $customerNo = (new VarNumber())->generateVar(10); // customer no
   $inquiryRequestId = (new GenerateRandomString())->generate(5);
 
@@ -51,7 +51,7 @@ try {
     $validateInputs['inquiryRequestId']
   );
 
-  echo htmlspecialchars($response, ENT_QUOTES, 'UTF-8');
+  echo $response;
 } catch (InvalidArgumentException $e) {
   error_log("Invalid argument: " . $e->getMessage());
 } catch (RuntimeException $e) {

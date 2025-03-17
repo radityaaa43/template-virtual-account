@@ -1,5 +1,7 @@
 <?php
 
+use BRI\Util\GenerateDate;
+
 require 'utils.php';
 
 header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
@@ -25,7 +27,7 @@ try {
   $channelId = ''; // channel id
 
   $partnerServiceId = ''; // partner service id
-  $startDate = '';//(new GenerateDate())->generate('+1 days', 'Y-m-d'); //'2024-06-21';
+  $startDate = ''; //(new GenerateDate())->generate(null, 'Y-m-d');
   $startTime = ''; // format H:i:sP
   $endTime = ''; // format H:i:sP
 
@@ -69,7 +71,7 @@ try {
     $validateInputs['endTime']
   );
 
-  echo htmlspecialchars($response, ENT_QUOTES, 'UTF-8');
+  echo $response;
 } catch (InvalidArgumentException $e) {
   error_log("Invalid argument: " . $e->getMessage());
 } catch (RuntimeException $e) {

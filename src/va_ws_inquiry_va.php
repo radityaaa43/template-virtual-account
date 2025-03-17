@@ -61,7 +61,7 @@ try {
     $validateInputs['trxId']
   );
 
-  echo htmlspecialchars($response, ENT_QUOTES, 'UTF-8');
+  echo $response;
 } catch (InvalidArgumentException $e) {
   error_log("Invalid argument: " . $e->getMessage());
 } catch (RuntimeException $e) {

@@ -32,7 +32,7 @@ try {
   $partnerServiceId = ''; // partner service id
   $customerNo = (new VarNumber())->generateVar(10); // customer no
   $virtualAccountName = ''; // virtual account name
-  $total = '10000.00'; // total
+  $total = ''; // total
   $expiredDate = (new GenerateDate())->generate('+1 days');
   $trxId = (new GenerateRandomString())->generate();
   $description = '';
@@ -69,7 +69,7 @@ try {
     $validateInputs['description']
   );
 
-  echo htmlspecialchars($response, ENT_QUOTES, 'UTF-8');
+  echo $response;
 } catch (InvalidArgumentException $e) {
   error_log("Invalid argument: " . $e->getMessage());
 } catch (RuntimeException $e) {

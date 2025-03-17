@@ -9,7 +9,7 @@ header("X-Frame-Options: DENY");
 header("Referrer-Policy: no-referrer");
 
 // url path values
-$baseUrl = 'https://api.bridex.qore.page/mock'; //base url
+$baseUrl = 'https://api.briapidevstudio.dev.bbri.io/mock'; //base url
 
 try {
   list($clientId, $clientSecret, $privateKey) = getCredentials();
@@ -37,7 +37,7 @@ try {
     $validateInputs['passApp']
   );
 
-  echo htmlspecialchars($response, ENT_QUOTES, 'UTF-8');
+  echo $response;
 } catch (InvalidArgumentException $e) {
   error_log("Invalid argument: " . $e->getMessage());
 } catch (RuntimeException $e) {
